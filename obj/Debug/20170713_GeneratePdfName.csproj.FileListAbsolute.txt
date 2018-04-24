@@ -1,0 +1,9 @@
+E:\xh\Part_Time_Work\20170713_GeneratePdfName\20170713_GeneratePdfName\bin\Debug\20170713_GeneratePdfName.exe.config
+E:\xh\Part_Time_Work\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Debug\20170713_GeneratePdfName.csprojResolveAssemblyReference.cache
+E:\xh\Part_Time_Work\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Debug\_20170713_GeneratePdfName.Form1.resources
+E:\xh\Part_Time_Work\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Debug\_20170713_GeneratePdfName.Properties.Resources.resources
+E:\xh\Part_Time_Work\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Debug\20170713_GeneratePdfName.csproj.GenerateResource.Cache
+E:\xh\Part_Time_Work\20170713_GeneratePdfName\20170713_GeneratePdfName\bin\Debug\20170713_GeneratePdfName.exe
+E:\xh\Part_Time_Work\20170713_GeneratePdfName\20170713_GeneratePdfName\bin\Debug\20170713_GeneratePdfName.pdb
+E:\xh\Part_Time_Work\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Debug\20170713_GeneratePdfName.exe
+E:\xh\Part_Time_Work\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Debug\20170713_GeneratePdfName.pdb
