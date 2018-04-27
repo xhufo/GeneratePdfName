@@ -15,14 +15,17 @@ namespace _20170713_GeneratePdfName
 {
     public partial class Form1 : Form
     {
+        RadioButton form;
         public Form1()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-            pdfName.Text = year.Text + name.Text;
+        { 
+            //pdfName.Text = year.Text + name.Text;
+            /* default setting */
+            //form.Text = "Geophysics";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -49,22 +52,147 @@ namespace _20170713_GeneratePdfName
         {
             //GeneratePdfName();
             //MessageBox.Show(year.Text+name.Text);
-            string strTmp;
-            string nameTmp;
-            string journalTmp;
-            string titleTmp;
+            //string strTmp;
+            //string nameTmp;
+            //string journalTmp;
+            //string titleTmp;
 
-            nameTmp = name.Text.ToLower(); 
-            journalTmp = journal.Text.ToLower();
-            titleTmp = title.Text.ToLower();
+            //nameTmp = name.Text.ToLower(); 
+            //journalTmp = journal.Text.ToLower();
+            //titleTmp = title.Text.ToLower();
 
-            nameTmp = Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(nameTmp);
-            journalTmp = Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(journalTmp);
-            titleTmp = GetFirstUpperStr(titleTmp);
+            //nameTmp = Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(nameTmp);
+            //journalTmp = Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(journalTmp);
+            //titleTmp = GetFirstUpperStr(titleTmp);
             
-            strTmp = year.Text + "-" + nameTmp + "-" + journalTmp + "-" + titleTmp;
-            pdfName.Text = strTmp;
+            //strTmp = year.Text + "-" + nameTmp + "-" + journalTmp + "-" + titleTmp;
+            //pdfName.Text = strTmp;
 
+            //richTextBox2 = richTextBox1;
+            string Input;
+            string title,year,author;
+            Input = richTextBox1.Text;
+            
+            if(form.Text=="Geophysics")
+            {
+                Match match = Regex.Match(Input, @"\”[^”]*\”");
+                // find title
+                title = match.Groups[0].Value;
+                title = Regex.Replace(title, @"\”+", "");
+                title = Regex.Replace(title, @"\.", "");
+                title = Regex.Replace(title, @"[^0-9A-Za-z\s-]", "");
+                richTextBox2.Text = title;
+                // find year
+                match = Regex.Match(Input, @"\([0-9]{4}\)");
+                year = match.Groups[0].Value;
+                year = Regex.Replace(year, @"\(", "");
+                year = Regex.Replace(year, @"\)", "");
+                // find author 
+                match = Regex.Match(Input, @"(.*)(\([0-9]{4}\))");
+                author = match.Groups[1].Value;
+                //Console.WriteLine("%s",author);
+                match = Regex.Match(author, @"(\w*)(?=\,)|(\w*)(\s)(?=and)");//(\w*)(\s)(and)
+                author = match.Groups[0].Value;
+                author = Regex.Replace(author, @" ", "");
+                author = Regex.Replace(author, @"[^A-Za-z]", "");
+                //richTextBox2.Text = "1"+match.Groups[0].Value + "2"+match.Groups[1].Value +"3"+match.Groups[2].Value;
+                richTextBox2.Text = year + "-" + author + "-" + "Geophysics" + "-" + title;
+            }
+            else if (form.Text == "SEG meeting")
+            {
+                Match match = Regex.Match(Input, @"(\([0-9]{4}\)\s)(.*)(?=\.\sSEG)");
+                //richTextBox2.Text = "1" + match.Groups[0].Value + "2" + match.Groups[1].Value + "3" + match.Groups[2].Value;
+                // find title
+                title = match.Groups[2].Value;
+                title = Regex.Replace(title, @"\”+", "");
+                title = Regex.Replace(title, @"\.", "");
+                title = Regex.Replace(title, @"[^0-9A-Za-z\s-]", "");
+                richTextBox2.Text = title;
+                // find year
+                match = Regex.Match(Input, @"\([0-9]{4}\)");
+                year = match.Groups[0].Value;
+                year = Regex.Replace(year, @"\(", "");
+                year = Regex.Replace(year, @"\)", "");
+                // find author 
+                match = Regex.Match(Input, @"(.*)(\([0-9]{4}\))");
+                author = match.Groups[1].Value;
+                //Console.WriteLine("%s",author);
+                match = Regex.Match(author, @"(\w*)(?=\,)|(\w*)(\s)(?=and)");//(\w*)(\s)(and)
+                author = match.Groups[0].Value;
+                author = Regex.Replace(author, @" ", "");
+                author = Regex.Replace(author, @"[^A-Za-z]", "");
+
+                richTextBox2.Text = year + "-" + author + "-" + "SEG" + "-" + title;
+            }
+            else if (form.Text == "石油地球物理勘探")
+            {
+                Match match = Regex.Match(Input, @"(\.\s)(.*)(?=\[J\])");
+                
+                // find title
+                title = match.Groups[2].Value;
+                //title = Regex.Replace(title, @"\”+", "");
+                //title = Regex.Replace(title, @"\.", "");
+                //title = Regex.Replace(title, @"[^0-9A-Za-z\s-]", "");
+                //richTextBox2.Text = title;
+                // find year
+                match = Regex.Match(Input, @"[0-9]{4}");
+                year = match.Groups[0].Value;
+                year = Regex.Replace(year, @"\(", "");
+                year = Regex.Replace(year, @"\)", "");
+                //// find author 
+                match = Regex.Match(Input, @"[\u4e00-\u9fa5]*(?=\,)");
+                author = match.Groups[0].Value;
+                //author = Regex.Replace(author, @" ", "");
+                //author = Regex.Replace(author, @"[^A-Za-z]", "");
+                //richTextBox2.Text = "1" + match.Groups[0].Value + "2" + match.Groups[1].Value + "3" + match.Groups[2].Value+author;
+                richTextBox2.Text = year + "-" + author + "-" + "石油地球物理勘探" + "-" + title;
+            }
+            else if (form.Text == "地球物理学报")
+            {
+                Match match = Regex.Match(Input, @"([0-9]{4})(\.)(.*)(\.\s)");
+                //richTextBox2.Text = "1" + match.Groups[0].Value + "2" + match.Groups[1].Value + "3" + match.Groups[2].Value +"4" + match.Groups[3].Value;
+                // find title
+                title = match.Groups[3].Value;
+                //title = Regex.Replace(title, @"\”+", "");
+                //title = Regex.Replace(title, @"\.", "");
+                //title = Regex.Replace(title, @"[^0-9A-Za-z\s-]", "");
+                //richTextBox2.Text = title;
+                // find year
+                match = Regex.Match(Input, @"[0-9]{4}");
+                year = match.Groups[0].Value;
+                year = Regex.Replace(year, @"\(", "");
+                year = Regex.Replace(year, @"\)", "");
+                //// find author 
+                match = Regex.Match(Input, @"[\u4e00-\u9fa5]*(?=\,)");
+                author = match.Groups[0].Value;
+                //author = Regex.Replace(author, @" ", "");
+                //author = Regex.Replace(author, @"[^A-Za-z]", "");
+                //
+                richTextBox2.Text = year + "-" + author + "-" + "地球物理学报" + "-" + title;
+            }
+            else if (form.Text == "地球物理学进展")
+            {
+                Match match = Regex.Match(Input, @"([0-9]{4})(\.)(.*)(\.\s)");
+                //richTextBox2.Text = "1" + match.Groups[0].Value + "2" + match.Groups[1].Value + "3" + match.Groups[2].Value +"4" + match.Groups[3].Value;
+                // find title
+                title = match.Groups[3].Value;
+                //title = Regex.Replace(title, @"\”+", "");
+                //title = Regex.Replace(title, @"\.", "");
+                //title = Regex.Replace(title, @"[^0-9A-Za-z\s-]", "");
+                //richTextBox2.Text = title;
+                // find year
+                match = Regex.Match(Input, @"[0-9]{4}");
+                year = match.Groups[0].Value;
+                year = Regex.Replace(year, @"\(", "");
+                year = Regex.Replace(year, @"\)", "");
+                //// find author 
+                match = Regex.Match(Input, @"[\u4e00-\u9fa5]*(?=\,)");
+                author = match.Groups[0].Value;
+                //author = Regex.Replace(author, @" ", "");
+                //author = Regex.Replace(author, @"[^A-Za-z]", "");
+                //
+                richTextBox2.Text = year + "-" + author + "-" + "地球物理学进展" + "-" + title;
+            }
         }
 
         private string GetFirstUpperStr(string s)
@@ -145,6 +273,79 @@ namespace _20170713_GeneratePdfName
         private void journal_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox2_TextChanged_1(object sender, EventArgs e)
+        {
+            
+                //pdfName.Text = 
+        }
+        
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked) form = radioButton1;
+        }
+ 
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton4.Checked) form = radioButton4;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked) form = radioButton2;
+        }
+
+ 
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton6.Checked) form = radioButton6;
+        }
+
+        private void radioButton7_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton7.Checked) form = radioButton7;
+        }
+
+        private void radioButton8_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton8.Checked) form = radioButton8;
         }
     }
 }

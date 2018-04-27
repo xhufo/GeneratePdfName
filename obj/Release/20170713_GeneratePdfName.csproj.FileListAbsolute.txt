@@ -7,12 +7,16 @@ E:\xh\Part_Time_Work\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Relea
 E:\xh\Part_Time_Work\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Release\20170713_GeneratePdfName.exe
 E:\xh\Part_Time_Work\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Release\20170713_GeneratePdfName.pdb
 E:\xh\Part_Time_Work\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Release\20170713_GeneratePdfName.csprojResolveAssemblyReference.cache
-E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\bin\Release\20170713_GeneratePdfName.exe.config
-E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Release\20170713_GeneratePdfName.exe
-E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Release\20170713_GeneratePdfName.pdb
-E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\bin\Release\20170713_GeneratePdfName.exe
-E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\bin\Release\20170713_GeneratePdfName.pdb
 E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Release\20170713_GeneratePdfName.csprojResolveAssemblyReference.cache
 E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Release\_20170713_GeneratePdfName.Form1.resources
 E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Release\_20170713_GeneratePdfName.Properties.Resources.resources
 E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Release\20170713_GeneratePdfName.csproj.GenerateResource.Cache
+E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\bin\Release\生成Pdf文件名V2.0 by xh.exe.config
+E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\bin\Release\生成Pdf文件名V2.0 by xh.exe.manifest
+E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\bin\Release\生成Pdf文件名V2.0 by xh.application
+E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\bin\Release\生成Pdf文件名V2.0 by xh.exe
+E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\bin\Release\生成Pdf文件名V2.0 by xh.pdb
+E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Release\生成Pdf文件名V2.0 by xh.exe.manifest
+E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Release\生成Pdf文件名V2.0 by xh.application
+E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Release\生成Pdf文件名V2.0 by xh.exe
+E:\个人\业余爱好\20170713_GeneratePdfName\20170713_GeneratePdfName\obj\Release\生成Pdf文件名V2.0 by xh.pdb
