@@ -15,7 +15,7 @@ namespace _20170713_GeneratePdfName
 {
     public partial class Form1 : Form
     {
-        RadioButton form;
+        RadioButton form=new RadioButton();
         public Form1()
         {
             InitializeComponent();
